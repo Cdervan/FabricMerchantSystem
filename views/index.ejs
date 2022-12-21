@@ -1,0 +1,28 @@
+<h3>Add tx</h3>
+<form method="post" action="/transactions/add">
+    <input type="text" name="name" placeholder="add name">
+    <input type="text" name="price" placeholder="add price">
+    <input type="text" name="tx_id" placeholder="add tx number">
+    <input type="text" name="timestamp" placeholder="add timestamp">
+    <input type="text" name="location" placeholder="add location">
+    <input type="submit" value="Submit">
+</form>
+    
+<form method="post" action="/">
+   <input type="text" id="inputFabricUserName" name="inputFabricUserName" placeholder="fabric user name">
+   <input type="submit" value="Submit">
+</form>
+
+<%= transactions %>
+
+<h3>Tx IDs</h3>
+<ul>
+    <% transactions.forEach((transactions) => { %>
+        <h4><%= transactions.value.name %></h4>
+        <li><%= transactions.value.wAddress %></li>
+        <li><%= transactions.value.price %></li>
+        <li><%= transactions.value.tx_id %></li>
+        <li><%= transactions.value.timestamp %></li>
+        <li><%= transactions.value.location %></li>
+    <% }) %>
+</ul>
